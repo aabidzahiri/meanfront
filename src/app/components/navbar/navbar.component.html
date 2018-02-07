@@ -1,0 +1,21 @@
+<mat-toolbar color="primary">
+    <mat-toolbar-row class="container">
+        <a [routerLink]="['']"><span>Meanbase</span></a>
+        
+        <span class="example-spacer"></span>
+
+        <button mat-button [routerLink]="['register']" *ngIf="!_auth.isAuthenticated">
+            <mat-icon>account_circle</mat-icon> Register
+        </button>
+        <button mat-button [routerLink]="['login']" *ngIf="!_auth.isAuthenticated">
+            <mat-icon>input</mat-icon> Login
+        </button>
+        
+        <button mat-button [routerLink]="['dashboard']" *ngIf="_auth.isAuthenticated">
+            <mat-icon>dashboard</mat-icon> Dashboard
+        </button>
+        <button mat-button *ngIf="_auth.isAuthenticated" (click)="logout()">
+            <mat-icon>power_settings_new</mat-icon> Logout
+        </button>
+    </mat-toolbar-row>        
+</mat-toolbar>

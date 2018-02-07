@@ -1,0 +1,28 @@
+<h2>Register</h2>
+<p>Use form below to register your account with us.</p>
+
+<form (ngSubmit)="onSubmit(register)" #register="ngForm">
+    <mat-form-field class="example-full-width">
+        <input matInput type="text" name="name" placeholder="Name" [(ngModel)]="name"
+               pattern="^[A-Z][a-z]+\s[A-Z][a-z]+$" required>
+        <mat-error>Alphabets only e.g Firstname Lastname</mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+        <input matInput type="text" name="username" placeholder="Username" [(ngModel)]="username"
+               pattern="^[A-z0-9]{5,30}$" required>
+        <mat-error>Only alphanumeric b/w 5-20 characters.</mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+        <input matInput type="email" name="email" placeholder="Email" [(ngModel)]="email" required
+               pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$">
+        <mat-error>Please enter valid email.</mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+        <input matInput type="password"  name="password" placeholder="Password" [(ngModel)]="password" required>
+    </mat-form-field>
+
+    <button type="submit" mat-raised-button color="primary">Register</button>
+</form>

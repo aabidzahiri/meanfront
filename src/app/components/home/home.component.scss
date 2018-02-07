@@ -1,0 +1,25 @@
+#tech_wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 25px;
+    
+    .tech {
+        box-shadow: 2px 2px 5px rgba(0,0,0,0.4);
+        padding: 25px;
+
+        img {
+            max-width: 250px;
+            margin: 0 auto;
+        }
+        h4 { font-weight: 700; }
+        p { font-size: 16px; }
+    }
+    
+    @media screen and (max-width: 768px) {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    @media screen and (max-width: 560px) {
+        grid-template-columns: 1fr;
+    }
+}
